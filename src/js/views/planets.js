@@ -1,8 +1,32 @@
-import React from "react";
-
-// function Planets(){
-// }
+import React, { useEffect, useContext } from "react";
+import { Jumbotron, Button } from "react-bootstrap";
+import { Context } from "../store/appContext";
 
 export const Planets = () => {
-	return <h1>PLANETAS</h1>;
+	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		actions.fetchPeople();
+	}, []);
+
+	return (
+		<Jumbotron>
+			<h1>Listado de planetas</h1>
+			<span>{JSON.stringify(store.favorites)}</span>
+			<ul>
+				{store.peopleList.map((item, index) => {
+					return (
+						<li key={index}>
+							<span>{item.name}</span>
+							{store.favorites.includes(item.name) ? null : (
+								<Button onClick={() => actions.setFavorites(item.name)} variant="outline-primary">
+									Agregar
+								</Button>
+							)}
+						</li>
+					);
+				})}
+			</ul>
+		</Jumbotron>
+	);
 };

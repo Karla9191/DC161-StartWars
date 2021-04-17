@@ -1,18 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import { Container, Row, Col } from "react-bootstrap";
-
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
-
-import injectContext from "./store/appContext";
-
-import { NavbarMenu } from "./component/navbarMenu";
-import { Footer } from "./component/footer";
 import { Planets } from "./views/planets";
 import { Characters } from "./views/characters";
+import injectContext from "./store/appContext";
+import { NavbarMenu } from "./component/navbarMenu";
+import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {

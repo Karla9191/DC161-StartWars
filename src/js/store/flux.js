@@ -13,10 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-type": "application/json"
 					}
 				};
+
 				const response = await fetch(URL, CONFIG);
 				const json = await response.json();
 
-				console.log(">>DATA>>", json);
+				//console.log(">>DATA>>", json);
 				setStore({ peopleList: json.results });
 			},
 			setFavorites: name => {

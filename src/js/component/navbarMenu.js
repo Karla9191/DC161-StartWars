@@ -7,7 +7,7 @@ export const NavbarMenu = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<Navbar>
+		<Navbar bg="dark">
 			<Navbar.Brand>
 				<Link to="/">
 					<Image
@@ -21,7 +21,7 @@ export const NavbarMenu = () => {
 
 			<Nav className="mr-auto">
 				<Link className="nav-link" to="/planets">
-					Planets
+					Planetas
 				</Link>
 				<Link className="nav-link" to="/characters">
 					Personajes

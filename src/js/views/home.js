@@ -1,3 +1,15 @@
+import React from "react";
+
+// function Planets(){
+// }
+
+export const Home = () => {
+	return <h1>PÁGINA PRINCIPAL</h1>;
+};
+
+{
+	/*
+
 import React, { useEffect, useContext } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
@@ -30,3 +42,5 @@ export const Home = () => {
 		</Jumbotron>
 	);
 };
+*/
+}
