@@ -11,17 +11,32 @@ export const Planets = () => {
 
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="holder.js/400px200" />
+			<Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
 			<Card.Body>
-				<Card.Title>Card Title</Card.Title>
-				<Card.Text>
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</Card.Text>
-
-				<Button variant="primary">Learn More!</Button>
-				<Button onClick={() => actions.setFavorites(item.name)} variant="outline-primary">
-					Agregar
-				</Button>
+				{store.planetsList.map((item, index) => {
+					return (
+						<li key={index}>
+							<Card.Title>
+								<h5>
+									<span>{item.name}</span>
+								</h5>
+							</Card.Title>
+							<Card.Text>
+								<h6>
+									Population: <span>{item.population}</span>
+								</h6>
+								<h6>
+									Terrain: <span>{item.terrain}</span>
+								</h6>
+								{store.favorites.includes(item.name) ? null : (
+									<Button onClick={() => actions.setFavorites(item.name)} variant="outline-primary">
+										Agregar
+									</Button>
+								)}
+							</Card.Text>
+						</li>
+					);
+				})}
 			</Card.Body>
 		</Card>
 	);
@@ -37,7 +52,9 @@ export const Planets = () => {
 				{store.planetsList.map((item, index) => {
 					return (
 						<li key={index}>
-							<span>{item.name}</span>
+                            <h5><span>{item.name}</span></h5>
+                            <span>{item.population}</span>
+                            <span>{item.terrain}</span>
 							{store.favorites.includes(item.name) ? null : (
 								<Button onClick={() => actions.setFavorites(item.name)} variant="outline-primary">
 									Agregar
