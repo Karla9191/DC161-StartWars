@@ -13,17 +13,18 @@ export const Planets = () => {
 	return (
 		<CardDeck>
 			<Card style={{ width: "25rem" }}>
-				<Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+				<Card.Img variant="top" src="holder.js/100px180?text=Image cap" />{" "}
 				<Card.Body>
 					<ul>
 						{store.planetsList.map((item, index) => {
 							return (
 								<li key={index}>
+									{" "}
 									<Card.Title>
 										<h5>
 											<span>{item.name}</span>
 										</h5>
-									</Card.Title>
+									</Card.Title>{" "}
 									<Card.Text>
 										<h6>
 											Population: <span>{item.population}</span>
@@ -31,7 +32,7 @@ export const Planets = () => {
 										<h6>
 											Terrain: <span>{item.terrain}</span>
 										</h6>
-										<Button variant="outline-primary">Learn more!</Button>
+										<Button variant="outline-primary">Learn more!</Button>{" "}
 										{store.favorites.includes(item.name) ? null : (
 											<Button
 												onClick={() => actions.setFavorites(item.name)}

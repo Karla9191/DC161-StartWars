@@ -16,6 +16,7 @@ export const Characters = () => {
 				{store.peopleList.map((item, index) => {
 					return (
 						<li key={index}>
+							{" "}
 							<h5>
 								<span>{item.name}</span>
 							</h5>
@@ -28,7 +29,7 @@ export const Characters = () => {
 							<h6>
 								Eye color: <span>{item.eye_color}</span>{" "}
 							</h6>
-							<Button variant="outline-primary">Learn more!</Button>
+							<Button variant="outline-primary">Learn more!</Button>{" "}
 							{store.favorites.includes(item.name) ? null : (
 								<Button onClick={() => actions.setFavorites(item.name)} variant="outline-warning">
 									<BsHeart />
