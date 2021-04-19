@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
+import { BsHeart } from "react-icons/bs";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);
