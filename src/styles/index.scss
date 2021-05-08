@@ -5,3 +5,15 @@
 body{
     background-image: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png");
 }
+
+ul.scrolling{
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+div.container-card{
+    display: inline-block;
+}

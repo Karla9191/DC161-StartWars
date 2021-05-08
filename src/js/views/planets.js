@@ -2,20 +2,27 @@ import React, { useEffect, useContext } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import { BsHeart } from "react-icons/bs";
+import { CardPlanet } from "../component/card";
 
 export const Planets = () => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() => {
-		actions.fetchPlanets();
-	}, []);
-
 	return (
 		<Jumbotron>
-			<ul>
+			<ul className="scrolling">
 				{store.planetsList.map((item, index) => {
 					return (
-						<li key={index} id="1">
+						<div className="container-card" key={index}>
+							<CardPlanet planet={item} />
+						</div>
+					);
+				})}
+			</ul>
+		</Jumbotron>
+	);
+};
+{
+	/*<li key={index} id="1">
 							{" "}
 							<h5>
 								<span>{item.name}</span>
@@ -32,14 +39,7 @@ export const Planets = () => {
 									<BsHeart />
 								</Button>
 							)}
-						</li>
-					);
-				})}
-			</ul>
-		</Jumbotron>
-	);
-};
-{
+                            </li>*/
 	/*
 
 	<Jumbotron>
