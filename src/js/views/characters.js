@@ -2,16 +2,38 @@ import React, { useEffect, useContext } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import { BsHeart } from "react-icons/bs";
+import { CardCharacter } from "../component/cardCharacter";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() => {
-		actions.fetchPeople();
-	}, []);
-
 	return (
 		<Jumbotron>
+			<ul className="scrolling">
+				{store.peopleList.map((item, index) => {
+					return (
+						<div className="container-card" key={index}>
+							<CardCharacter people={item} />
+						</div>
+					);
+				})}
+			</ul>
+		</Jumbotron>
+	);
+};
+
+/*
+<h1>Listado de personajes</h1>
+<span>{JSON.stringify(store.favorites)}</span>
+<h5>Height:</h5><span>{item.height}</span>
+<h5>Mass: </h5><span>{item.mass}</span>
+<h5>Skin color: </h5> <span>{item.skin_color}</span>
+<h5>Birth year: </h5> <span>{item.birth_year}</span>
+*/
+
+/*
+
+<Jumbotron>
 			<ul>
 				{store.peopleList.map((item, index) => {
 					return (
@@ -40,14 +62,5 @@ export const Characters = () => {
 				})}
 			</ul>
 		</Jumbotron>
-	);
-};
 
-/*
-<h1>Listado de personajes</h1>
-<span>{JSON.stringify(store.favorites)}</span>
-<h5>Height:</h5><span>{item.height}</span>
-<h5>Mass: </h5><span>{item.mass}</span>
-<h5>Skin color: </h5> <span>{item.skin_color}</span>
-<h5>Birth year: </h5> <span>{item.birth_year}</span>
 */

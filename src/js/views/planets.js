@@ -22,6 +22,9 @@ export const Planets = () => {
 	);
 };
 {
+	/*
+  
+    */
 	/*<li key={index} id="1">
 							{" "}
 							<h5>
