@@ -32,6 +32,7 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 			state.actions.fetchPlanets();
+			state.actions.fetchPlanetsDetail();
 			state.actions.fetchPeople();
 		}, []);
 
