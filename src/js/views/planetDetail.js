@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import { BsHeart } from "react-icons/bs";
-import { individualPlaneta } from "../component/individualPlaneta";
+import { detailPlanet } from "../component/detailPlanet";
 
 export const PlanetDetail = () => {
 	const { store, actions } = useContext(Context);
@@ -12,7 +12,7 @@ export const PlanetDetail = () => {
 			{store.planetsDetail.map((item, index) => {
 				return (
 					<div key={index}>
-						<individualPlaneta planet={item} />
+						<detailPlanet planet={item} />
 					</div>
 				);
 			})}

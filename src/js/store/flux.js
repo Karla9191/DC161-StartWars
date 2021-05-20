@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			peopleList: [],
 			planetsList: [],
-			PlanetsDetail: []
+			planetsDetail: []
 		},
 		actions: {
 			fetchPeople: async () => {

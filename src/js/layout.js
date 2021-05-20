@@ -32,13 +32,7 @@ const Layout = () => {
 								<Route exact path="/" component={Home} />
 								<Route exact path="/planets" component={Planets} />
 								<Route exact path="/characters" component={Characters} />
-
-								{/* <Route exact path="/">
-									<Home />
-								</Route> */}
-								<Route exact path="/planetDetail">
-									<PlanetDetail />
-								</Route>
+								<Route exact path="/planetDetail" component={PlanetDetail} />
 								<Route>
 									<h1>Not found!</h1>
 								</Route>

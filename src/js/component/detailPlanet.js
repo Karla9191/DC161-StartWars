@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { BsHeart } from "react-icons/bs";
 import { Context } from "../store/appContext";
 
-export const individualPlaneta = ({ planet }) => {
+export const detailPlanet = ({ planet }) => {
 	console.log(planet);
 	const { store, actions } = useContext(Context);
 	return (
@@ -13,7 +13,6 @@ export const individualPlaneta = ({ planet }) => {
 			<Table striped bordered hover variant="dark">
 				<thead>
 					<tr>
-						<th>#</th>
 						<th>Name</th>
 						<th>Rotation_period</th>
 						<th>Orbital_period</th>
@@ -27,7 +26,6 @@ export const individualPlaneta = ({ planet }) => {
 				</thead>
 				<tbody>
 					<tr>
-						<td>1</td>
 						<th>{planet.name}</th>
 						<th>{planet.rotation_period}</th>
 						<th>{planet.orbital_period}</th>
@@ -44,6 +42,6 @@ export const individualPlaneta = ({ planet }) => {
 	);
 };
 
-individualPlaneta.propTypes = {
+detailPlanet.propTypes = {
 	planet: PropTypes.object
 };

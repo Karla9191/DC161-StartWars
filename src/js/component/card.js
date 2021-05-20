@@ -19,9 +19,9 @@ export const CardPlanet = ({ planet }) => {
 					<Card.Title>Name: {planet.name}</Card.Title>
 					<Card.Text>Population: {planet.population}</Card.Text>
 					<Card.Text>Terrain: {planet.terrain}</Card.Text>
-
-					<Button variant="outline-primary">Learn more!</Button>
-
+					<Link to="/planetDetail">
+						<Button variant="outline-primary">Learn more!</Button>
+					</Link>
 					<Button onClick={() => actions.setFavorites(planet.name)} variant="outline-warning">
 						<BsHeart />
 					</Button>
